@@ -1,0 +1,461 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background-color: #f0f4ff;
+  color: #1c1c1c;
+  line-height: 1.5;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  text-align: center;
+  padding: 30px 15px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #1877f2;
+  margin-bottom: 6px;
+}
+
+header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container,
+.products-section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.page-title,
+.products-section h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #1877f2;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+.product-card {
+  background: #f9fbff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.product-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #1c1c1c;
+}
+
+/* Lesson preview */
+.product-card ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+.product-card li {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* =========================
+   PRICE & ACTIONS
+========================= */
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.price {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #0b69ff;
+}
+
+/* Enroll button */
+.pay-btn {
+  background: #1877f2;
+  border: 2px solid #0b51c5;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.enquiry {
+  background: whitesmoke;
+  border: 2px solid #1877f2;
+  color: #1877f2;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.pay-btn:hover {
+  background: #0b51c5;
+}
+
+.enquiry:hover {
+  background: rgb(231, 225, 225);
+}
+
+.pay-btn:active {
+  transform: scale(0.95);
+}
+
+.enquiry:active {
+  transform: scale(0.95);
+}
+
+/* View lessons */
+.view-lessons-btn {
+  margin-top: 10px;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.view-lessons-btn:hover {
+  background: #1fae55;
+}
+
+.view-lessons-btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 12px;
+}
+
+/* Modal content */
+.modal-content {
+  background: #f9fbff;
+  border-radius: 14px;
+  padding: 20px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalPop 0.25s ease;
+}
+
+.modal-content small {
+  margin-bottom: 15px;
+  font-style: italic;
+  /* color: green; */
+}
+
+/* ================= BONUS HIGHLIGHT ================= */
+.bonus {
+  display: inline-block;
+  /* margin-top: 10px; */
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 6px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional subtle animation */
+.bonus {
+  animation: pulseBonus 0.5s infinite;
+}
+
+@keyframes pulseBonus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#nigeriaPayment {
+  padding: 2px 10px;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  line-height: 35px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#sendProofBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.selectCourse {
+  margin-top: 25px;
+}
+
+/* Modal animation */
+@keyframes modalPop {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 0px;
+  right: 7px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: red;
+
+  cursor: pointer;
+}
+
+.modal h3 {
+  /* font-size: 1.2rem; */
+  margin-bottom: 12px;
+}
+
+.modal ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.modal li {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   LOADING OVERLAY
+========================= */
+#loadingOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ddd;
+  border-top-color: #1877f2;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loadingOverlay p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #1877f2;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 599px) {
+  .bonus-message {
+    font-size: 0.85rem; /* smaller text */
+    padding: 2px 6px; /* tighter padding */
+    border-radius: 5px; /* slightly smaller corners */
+    animation: pulseBonus 0.5s infinite;
+  }
+}
+
+@media (min-width: 600px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .pay-btn,
+  .view-lessons-btn {
+    font-size: 1rem;
+  }
+}
+
+.pay-btn small {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  line-height: 1.3;
+  opacity: 0.95;
+}
+
+/* ================= FREE COURSE SELECT ================= */
+
+.checkout-summary {
+  margin-top: 12px;
+  background-color: #f0f4ff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-style: italic;
+}
+.free-course-box {
+  margin-top: 12px;
+}
+
+.free-course-box label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.free-course-box select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.checkout-summary li.free {
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+.checkout-summary h4 {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.bonus-container {
+  display: flex;
+  flex-direction: column; /* stack the lines */
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically if container has height */
+  text-align: center;
+  margin: 20px 0; /* optional spacing */
+}
+
+.bonus {
+  font-size: 1.2rem;
+  color: #ffffff; /* optional highlight color */
+}
+
+/* .bonus-span {
+  font-size: 1rem;
+  color: #333;
+} */
+
+.bonus-span,
+.bonus-message {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-style: italic;
+  color: green;
+  animation: pulseBonus 0.5s infinite;
+}

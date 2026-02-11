@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paid Ads & Online Business Training</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <h1>Paid Ads & Online Business Training</h1>
+      <p>Step-by-step courses you need to make money online</p>
+    </header>
+
+    <div class="bonus-container">
+      <strong class="bonus">Bonus:</strong>
+      <span class="bonus-span">
+        <strong> Enroll in 1 course</strong> and get another course
+        <strong>FREE.</strong>
+      </span>
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container">
+      <h2 class="page-title">Our Training Modules</h2>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected by products.js -->
+      </div>
+    </main>
+
+    <!-- ================= LESSONS MODAL ================= -->
+    <div id="lessonsModal" class="modal hidden">
+      <div class="modal-content">
+        <span id="modalClose" class="modal-close">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <ul id="modalLessons"></ul>
+      </div>
+    </div>
+
+    <!-- ================= PAYMENT MODAL ================= -->
+    <div id="paymentModal" class="modal hidden">
+      <div class="modal-content">
+        <span id="paymentClose" class="modal-close">&times;</span>
+
+        <h4>Complete Your Enrollment:</h4>
+        <small>
+          Make payment using the details below and
+          <strong>send your proof of payment</strong> to gain instant access.
+          <br />
+          <br />
+          <strong class="bonus">Bonus:</strong>
+          <span class="bonus-span"
+            ><strong class="bonus-meassage"> Enroll in 1 course</strong> and get
+            another course <strong>FREE.</strong></span
+          >
+
+          <!-- CHECKOUT SUMMARY -->
+          <div class="checkout-summary">
+            <h4>Your Enrollment Summary:</h4>
+            <ul id="checkoutCourses"></ul>
+          </div>
+
+          <!-- FREE COURSE SELECT -->
+          <div class="free-course-box">
+            <label for="freeCourseSelect" class="selectCourse"
+              >Choose Your FREE Course</label
+            >
+            <select id="freeCourseSelect">
+              <option value="">-Select a free course here-</option>
+            </select>
+          </div>
+        </small>
+
+        <!-- Nigeria payment -->
+
+        <div id="nigeriaPayment">
+          <small style="color: #ccc"
+            >Make your payment via this account details below:</small
+          >
+          <p><strong>Account Number: </strong>1221797447</p>
+          <p><strong>Account Name:</strong> Lucky Sunday Akpan</p>
+
+          <p>
+            <strong>Amount:</strong>
+            <span id="ngnAmount"></span>
+          </p>
+          <p><strong>Bank:</strong> Access Bank</p>
+
+          <div class="buttons">
+            <button id="sendProofBtn" class="pay-btn">
+              Send Proof of Payment
+            </button>
+
+            <button id="sendProofBtn" class="enquiry">Make Enquiry</button>
+          </div>
+        </div>
+
+        <!-- International payment -->
+        <div id="intlPayment" class="hidden">
+          <p>
+            <strong>Amount:</strong><br />
+            <span id="intlAmount"></span>
+          </p>
+
+          <button id="payCardBtn" class="pay-btn">Pay with Card</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= LOADING OVERLAY ================= -->
+    <div id="loadingOverlay" class="hidden">
+      <div class="loader"></div>
+      <p>Loading...</p>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="js/data-products.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/products.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="js/security.js"></script>
+  </body>
+</html>
