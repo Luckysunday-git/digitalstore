@@ -36,7 +36,7 @@ window.products = [
       "How to use deep-interest targeting for IG audiences.",
       "How to scale the best performing Instagram ads.",
     ],
-    price: 7000,
+    price: 6500,
   },
 
   {
@@ -53,7 +53,7 @@ window.products = [
       "How to use automated creative optimization (ACO).",
       "How to scale winning TikTok ads profitably.",
     ],
-    price: 7000,
+    price: 6500,
   },
 
   {
@@ -112,7 +112,7 @@ window.products = [
       "How to create landing pages/websites for your online or offline products/stores in minutes using AI.",
       "Beauty Spa Websites, how to launch Your Business Online!",
       "Best way to run ads that lead visitors to your landing pages, online stores or websites.",
-      "The best ad campaign objective in 2025.",
+      "The best ad campaign objective in 2026.",
       "Audience research for your product niche.",
       "How to setup custom Audience using AI.",
       "Creating high-converting ad creatives.",
@@ -151,12 +151,12 @@ window.products = [
       "Major mistakes that mess up many great ad campaigns.",
       "The best payment method for funding of ad account to avoid restrictions.",
       "How to identify why ads aren't converting.",
-      "The best ad campaign objective in 2025.",
+      "The best ad campaign objective in 2026.",
       "Optimizing audience targeting.",
       "How to setup custom Audience using AI.",
       "How to improve ad creatives the right way.",
       "Fixing campaign objectives.",
-      "Analyzing ad frequency and relevance.",
+      "How to analyze ad frequency and relevance.",
       "How to know when to pause a particular ad campaign.",
       "When and how to adjust ad budget for better results.",
       "How to use low budget to maximize profit.",
@@ -190,7 +190,7 @@ window.products = [
     lessons: [
       "How to safely complete ad account setup.",
       "Campaign creation & management.",
-      "The best campaign objective in 2025.",
+      "The best campaign objective in 2026.",
       "Right process of Audience research & targeting.",
       "Ad creative design formula that brings more sales.",
       "How to create your landing page or website using AI.",

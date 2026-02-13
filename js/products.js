@@ -2,7 +2,8 @@
   window.freeCourses = [
     { name: "How to Create AI Videos for Content & Income" },
     { name: "How to Make Money with AI" },
-    { name: "How to optimize your post or ads with AI for 100% engagment" },
+    { name: "How to optimize post or ads with AI for 100% engagment" },
+    { name: "How to make money through affiliate marketing" },
     { name: "How to Create AI Social Media Content That Converts" },
     { name: "How to Use AI to Create Profitable Contents" },
     { name: "How to Build Faceless YouTube Channels with AI" },
@@ -176,7 +177,7 @@
 
     if (selectedFreeIndex !== null) {
       const free = window.freeCourses[selectedFreeIndex];
-      msg += `%0AI also selected free course: %0A*${free.name}*`;
+      msg += `%0AI also selected free course:%0A*${free.name}*%0A`;
     }
 
     msg += `%0A%0APlease find my proof of payment below.`;
