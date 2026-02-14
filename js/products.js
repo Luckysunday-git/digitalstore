@@ -58,7 +58,7 @@
       const preview = product.lessons.slice(0, 3);
 
       card.innerHTML = `
-          <h3>${product.name}</h3>
+          <h4 class="productName">${product.name}</h4>
           <ul>
             ${preview.map((l) => `<li>${l}</li>`).join("")}
             ${
@@ -167,30 +167,55 @@
   }
 
   /* ================= WHATSAPP ================= */
+  /* ================= WHATSAPP (DIRECT APP) ================= */
+  const phone = "2348130853304";
+
   sendProofBtn.onclick = () => {
     if (selectedProductIndex === null) return;
 
     const paid = window.products[selectedProductIndex];
-    let msg = `Hello Coach Lucky,%0A%0AI have paid ₦${paid.price.toLocaleString()} for:%0A*${
-      paid.name
-    }*%0A`;
+
+    let msg = `Hello Coach Lucky,
+
+I have paid ₦${paid.price.toLocaleString()} for:
+*${paid.name}*`;
 
     if (selectedFreeIndex !== null) {
-      const free = window.freeCourses[selectedFreeIndex];
-      msg += `%0AI also selected free course:%0A*${free.name}*%0A`;
+      msg += `
+
+I also selected free course:
+*${window.freeCourses[selectedFreeIndex].name}*`;
     }
 
-    msg += `%0A%0APlease find my proof of payment below.`;
-    window.open(`https://wa.me/2348130853304?text=${msg}`, "_blank");
+    msg += `
+
+Please find my proof of payment below.`;
+
+    const url = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(
+      msg
+    )}`;
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 100);
   };
 
   enquiryBtn.onclick = () => {
     if (selectedProductIndex === null) return;
+
     const p = window.products[selectedProductIndex];
-    window.open(
-      `https://wa.me/2348130853304?text=Hello Coach Lucky,%0A%0AI want to enquire about:%0A*${p.name}*`,
-      "_blank"
-    );
+    const msg = `Hello Coach Lucky,
+
+I want to enquire about:
+*${p.name}*`;
+
+    const url = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(
+      msg
+    )}`;
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 100);
   };
 
   /* ================= PAYSTACK ================= */

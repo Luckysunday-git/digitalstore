@@ -1,78 +1,85 @@
 (function () {
   const whatsappPhone = "2348130853304";
+  const loader = document.getElementById("loadingOverlay");
 
   document.addEventListener("DOMContentLoaded", () => {
-    // Handle "Enroll Now" clicks
+    /* ================= ENROLL NOW ================= */
     document.body.addEventListener("click", (e) => {
-      if (e.target.classList.contains("pay-btn")) {
-        // Show loading overlay
-        const loading = document.getElementById("loadingOverlay");
-        if (loading) loading.style.display = "flex";
+      const btn = e.target.closest(".pay-btn");
+      if (!btn) return;
 
-        // Get the selected product info from its card
-        const productCard = e.target.closest(".product-card");
-        if (!productCard) return;
+      // Show loader
+      if (loader) loader.classList.remove("hidden");
 
-        const selectedProduct = {
-          topic: productCard.dataset.topic || "Unknown",
-          price: productCard.dataset.price || 0,
-        };
+      // Get product card
+      const productCard = btn.closest(".product-card");
+      if (!productCard) return;
 
-        // Store globally
-        window.selectedProduct = selectedProduct;
+      const selectedProduct = {
+        topic: productCard.dataset.topic || "Course Enrollment",
+        price: productCard.dataset.price || 0,
+      };
 
-        // Update modal amount dynamically
-        const amountEl = document.getElementById("modalAmount");
-        if (amountEl) {
-          amountEl.textContent = `₦${parseInt(
-            selectedProduct.price
-          ).toLocaleString()}`;
-        }
+      // Store globally
+      window.selectedProduct = selectedProduct;
 
-        // Simulate short loading, then show modal
-        setTimeout(() => {
-          if (loading) loading.style.display = "none";
+      // Small delay for UX
+      setTimeout(() => {
+        if (loader) loader.classList.add("hidden");
 
-          const modal = document.getElementById("paymentModal");
-          if (modal) modal.classList.remove("hidden");
-        }, 500); // 500ms loading effect
-      }
+        const modal = document.getElementById("paymentModal");
+        if (modal) modal.classList.remove("hidden");
+      }, 400);
     });
 
-    // Close modal
+    /* ================= CLOSE MODAL ================= */
     const closeBtn = document.getElementById("paymentClose");
     if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        const modal = document.getElementById("paymentModal");
-        modal.classList.add("hidden");
-      });
+      closeBtn.onclick = () => {
+        document.getElementById("paymentModal").classList.add("hidden");
+      };
     }
 
-    // Close modal if click outside content
     const modal = document.getElementById("paymentModal");
     if (modal) {
-      modal.addEventListener("click", (e) => {
+      modal.onclick = (e) => {
         if (e.target === modal) modal.classList.add("hidden");
-      });
+      };
     }
 
-    // Send proof of payment
+    /* ================= SEND PAYMENT PROOF ================= */
     const proofBtn = document.getElementById("sendProofBtn");
     if (proofBtn) {
-      proofBtn.addEventListener("click", () => {
+      proofBtn.onclick = () => {
         const product = window.selectedProduct || {};
         const topic = product.topic || "Course Enrollment";
         const price = product.price
           ? `₦${parseInt(product.price).toLocaleString()}`
           : "₦0";
 
-        const msg = `*Hello Coach Lucky*,\n\nI have completed payment of *${price}* for *${topic}*.\nPlease confirm.`;
+        const msg = `Hello Coach Lucky,
 
-        const url = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+I have completed payment of ${price} for:
+*${topic}*
+
+Please confirm my payment.`;
+
+        const whatsappURL = `whatsapp://send?phone=${whatsappPhone}&text=${encodeURIComponent(
           msg
         )}`;
-        window.open(url, "_blank");
-      });
+
+        // Show loader briefly
+        if (loader) loader.classList.remove("hidden");
+
+        setTimeout(() => {
+          window.location.href = whatsappURL;
+        }, 300);
+      };
     }
+
+    /* ================= AUTO HIDE LOADER ================= */
+    window.addEventListener("focus", () => {
+      if (loader) loader.classList.add("hidden");
+    });
   });
 })();
