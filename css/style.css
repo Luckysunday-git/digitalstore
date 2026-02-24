@@ -10,7 +10,7 @@
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
-  background-color: #f7f4ed;
+  background-color: #e7e6e6;
   color: #1c1c1c;
   line-height: 1.5;
 }
@@ -80,7 +80,7 @@ header p {
 ========================= */
 .product-card {
   /* background: #f7f4ed; */
-  background: beige /* background: #f7f4ed; */;
+  background: #ffffff; /* background: #f7f4ed; */
   font-family: roboto;
   border-radius: 14px;
   padding: 16px;
@@ -202,6 +202,7 @@ header p {
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.9rem;
+  font-weight: 600;
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
@@ -211,6 +212,7 @@ header p {
 
 .view-lessons-btn:active {
   transform: scale(0.95);
+  background: #cb8113;
 }
 
 /* =========================
@@ -229,7 +231,7 @@ header p {
 
 /* Modal content */
 .modal-content {
-  background: beige;
+  background: #f7f4ed;
   border-radius: 14px;
   padding: 20px;
   width: 100%;
