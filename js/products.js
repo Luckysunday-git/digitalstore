@@ -114,14 +114,16 @@
     ngnAmountEl.innerText = `₦${product.price.toLocaleString()}`;
     intlAmountEl.innerText = `$${(product.price / 750).toFixed(2)}`;
 
-    const country = await getUserCountry();
-    nigeriaPayment.style.display = country === "NG" ? "block" : "none";
-    intlPayment.style.display = country === "NG" ? "none" : "block";
-
     populateFreeCourses();
     updateCheckoutSummary();
 
+    // 🔥 OPEN MODAL IMMEDIATELY
     paymentModal.classList.remove("hidden");
+
+    // 🔥 Detect country AFTER opening
+    const country = await getUserCountry();
+    nigeriaPayment.style.display = country === "NG" ? "block" : "none";
+    intlPayment.style.display = country === "NG" ? "none" : "block";
   }
 
   paymentClose.onclick = () => paymentModal.classList.add("hidden");
